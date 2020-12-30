@@ -2,8 +2,7 @@ import math
 from datetime import date
 from .models import loan, payment_log
 
-def update_loan_balance(payment_amount, loan_id, interest_rate):
-	this_loan = loan.objects.get(id=loan_id)
+def update_loan_balance(payment_amount, this_loan):
 	days_since_last_payment = loan.last_payment_date - date.today() or 0
 	interest = 0
 	for i in range(days_since_last_payment):

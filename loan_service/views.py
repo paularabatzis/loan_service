@@ -11,7 +11,7 @@ def payment_logs(request):
     return render( request, 'loan_service/payment_log.html', {'payments' : payments})
 
 def submit_payment(request):
-    payment_amount = request.get('payment_amount')
-    loan_name = request.get('loan_name')
+    payment_amount = request.POST['payment_amount']
+    loan_name = request.POST['loan_name']
     loan = loan.objects.get(loan_name=loan_name)
-    update_loan_balance(payment_amount, loan.loan_name, loan.interest_rate)
+    update_loan_balance(payment_amount, loan)
