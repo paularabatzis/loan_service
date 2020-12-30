@@ -1,0 +1,22 @@
+{% extends "loan_service/base.html" %}
+{% block title %}Submit a Payment{% endblock %}
+ 
+{% block breadcrumb %}{% include "loan_service/breadcrumb.html" with home=True %}{% endblock %}
+ 
+{% block explanation %}
+    <div class="explanation">
+        <h1>submit a payment</h1>
+        <!-- <img src="/static/images/spiderman_minion.jpg" >&nbsp; -->
+        <textarea>Enter your payment amount</textarea>
+    </div>
+{% endblock %}
+ 
+{% block page_content %}
+    <form id="search_form" action="/submit_payment" method="POST">
+        <!-- Name of the movie (or part therof) -->
+            <input name="loan_name" placeholder="name of loan" />
+            <label>Payment Amount &nbsp;:&nbsp;</label>
+            <input name="payment_amount" placeholder="amount" />
+            <label>&nbsp;</label><input type="submit" value="Submit a Payment"/>
+    </form>
+{% endblock %}

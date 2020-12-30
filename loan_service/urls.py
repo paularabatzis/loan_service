@@ -24,5 +24,6 @@ urlpatterns = [
     path('', admin.site.urls),
     path('admin/', admin.site.urls),
     url(r'payment_log', PaymentList.as_view()),
-    url(r'payment_log_html', views.payment_logs)
+    url(r'payment_log_html', views.payment_logs),
+    url(r'make_payment', views.submit_payment)
 ]
