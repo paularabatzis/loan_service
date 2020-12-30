@@ -15,3 +15,5 @@ def submit_payment(request):
     loan_name = request.POST['loan_name']
     loan = loan.objects.get(loan_name=loan_name)
     update_loan_balance(payment_amount, loan)
+    payments = payment_log.objects.filter(loan_id=loan)
+    return render( request, 'loan_service/payment_log.html', {'payments' : payments})
