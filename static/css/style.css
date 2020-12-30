@@ -1,0 +1,73 @@
+*
+{
+    font-family: sans-serif;
+    font-size: large;
+    background: #e4ffc9;
+}
+ 
+table 
+{
+    border-collapse: collapse;
+}
+table, th, td
+{
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top;
+}
+ 
+.explanation
+{
+    display: table-row;
+}
+ 
+ 
+.explanation .landscape
+{
+    vertical-align: middle;
+    height: 150px;
+    width: 300px;
+}
+ 
+ 
+.explanation .portrait
+{
+    vertical-align: middle;
+    height: 250px;
+    width: 200px;    
+}
+ 
+.explanation textarea
+{
+    vertical-align: top;
+    height: 150px;
+    width: 400px;
+    border: none;
+    background: none;
+    font-size: large;
+}
+ 
+.row
+{
+    display: table-row;
+}
+ 
+#search_form label
+{
+    display : table-cell;
+    text-align : right;
+}
+ 
+#search_form input, select
+{
+    display : table-cell;
+    width : 300px;
+}
+ 
+#search_form input[type=submit]
+{
+    font-size : large;
+    font-weight : bold;
+    border-radius:25px;
+    background-color : #2FC7C9;
+}
