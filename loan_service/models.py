@@ -11,7 +11,7 @@ class Loan(models.Model):
 	def __str__(self):
 		return self.name
 
-class payment_log(models.Model):
+class PaymentLog(models.Model):
 	loan_id = models.ForeignKey(Loan, on_delete=models.CASCADE)
 	payment_date = models.DateField()
 	payment_amount = models.DecimalField(max_digits=20, decimal_places=2)
