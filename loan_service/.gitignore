@@ -1,2 +1,4 @@
 # created by virtualenv automatically
 loan_service/lib/
+__pycache__/
+db.sqlite3
