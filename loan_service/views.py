@@ -1,7 +1,7 @@
 from django.views.generic import ListView
 from .models import payment_log, loan
 from django.shortcuts import render
-from utils import update_loan_balance
+from .utils import update_loan_balance
 
 class PaymentList(ListView):
     model = payment_log
