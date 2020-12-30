@@ -1,0 +1,11 @@
+{% extends "loan_service/base.html" %}
+{% block title %}Loan Tracker Project{% endblock %}
+<!-- {% block breadcrumb %}{% include "dvds/breadcrumb.html" with search=True admin=True %}{% endblock %} -->
+{% block explanation %}
+    <div class="explanation">
+        <h1>Title here</h1>
+        <!-- <img class="landscape" src="static/images/avengers.jpg">&nbsp; -->
+        <textarea>Payment Logs</textarea>
+    </div>
+{% endblock %}
+{% block page_content %}{% include "loan_service/payment_log_list.html" with titles=object %}{% endblock %}
