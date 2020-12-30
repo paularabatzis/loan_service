@@ -11,7 +11,7 @@ def update_loan_balance(payment_amount, this_loan):
 	this_loan.last_payment_date = date.today()
 	this_loan.save()
 	log = PaymentLog.objects.create(loan_id=this_loan, payment_date=date.today(), payment_amount=payment_amount, 
-		interest_since_last_payment=interest)
+		interest_since_last_payment=interest, remaining_balance=this_loan.current_amount)
 	log.save()
 	return
 

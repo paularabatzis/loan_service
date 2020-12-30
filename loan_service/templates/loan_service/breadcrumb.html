@@ -1,5 +1,7 @@
 <!-- <img src="/static/images/deb_movie_logo.jpg">&nbsp; -->
 {% if home %}<a href="/">Home</a>&nbsp;{% endif %}
+{% if payment_log %}<a href="/payment_log">Payment Logs</a>&nbsp;{% endif %}
+{% if submit_payment %}<a href="/submit_payment">Submit Payments</a>&nbsp;{% endif %}
 {% if admin %}|&nbsp;<a href="admin" target="_blank">Admins</a>{% endif %}
 {% if back %}|&nbsp;<a href="javascript:history.back(-1)">Back</a>&nbsp;{% endif %}
 <!-- {% if search_refine %}|&nbsp;<a href="javascript:history.back(-1)">Refine Search</a>&nbsp;{% endif %} -->

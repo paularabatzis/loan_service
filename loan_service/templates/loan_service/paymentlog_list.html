@@ -1,16 +1,30 @@
-<table border="1">
-    <tr>
-        <th>loan_id</th> 
-        <th>payment_date</th> 
-        <th>payment_amount</th> 
-        <th>interest_since_last_payment</th> 
-    </tr>
-    {% for log in object_list %}
-        <tr>
-            <td>{{log.loan_id}}</td>
-            <td>{{log.payment_date}}</td>
-            <td>{{log.payment_amount}}</td>>
-            <td>{{log.interest_since_last_payment}}</td>
-        </tr>
-    {% endfor %}
-</table>
+{% block breadcrumb %}{% include "loan_service/breadcrumb.html" with home=False submit_payment=True %}{% endblock %}
+
+{% block page_content %}
+<form id="data_form" action="/payment_log" method="GET">
+	<select name="loan_name" id="loan">
+		{% for entry in loans %}
+		<option value="{{ entry.id }}">{{ entry.name }}</option>
+		{% endfor %}
+	</select>
+
+        <table border="1">
+    	<tr>
+        	<th>loan name</th> 
+        	<th>payment date</th> 
+        	<th>payment amount</th> 
+		<th>remaining balance</th>
+        	<th>interest since last payment</th> 
+    	</tr>
+    	{% for log in payments %}
+       	<tr>
+            	<td>{{log.loan_id}}</td>
+            	<td>{{log.payment_date}}</td>
+            	<td>{{log.payment_amount}}</td>
+	    	<td>{{log.remaining_balance}}</td>
+            	<td>{{log.interest_since_last_payment}}</td>
+       	</tr>
+    	{% endfor %}
+	</table>
+</form>
+{% endblock %}

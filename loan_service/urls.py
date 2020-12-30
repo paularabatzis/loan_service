@@ -21,10 +21,9 @@ from loan_service import views
 app_name = 'loan_service'
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('', views.submit_payment),
     path('admin/', admin.site.urls),
-    url(r'payment_log', PaymentList.as_view()),
-    url(r'payment_log_html', views.payment_logs),
-    url(r'make_payment', views.submit_payment),
+    # url(r'payment_log', PaymentList.as_view()),
+    url(r'payment_log', views.payment_logs),
     url(r'submit_payment', views.submit_payment)
 ]
