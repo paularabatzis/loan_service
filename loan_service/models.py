@@ -7,6 +7,9 @@ class loan(models.Model):
 	current_amount = models.DecimalField(max_digits=20, decimal_places=2)
 	last_payment_date = models.DateField(default=date.today())
 
+	def __str__(self):
+		return self.name
+
 class payment_log(models.Model):
 	loan_id = models.ForeignKey(loan, on_delete=models.CASCADE)
 	payment_date = models.DateField()
@@ -15,3 +18,6 @@ class payment_log(models.Model):
 	
 	class meta:
 		ordering = ["loan_id", "payment_date", "payment_amount", "interest_since_last_payment"]
+
+	def __str__(self):
+		return self.loan_id
