@@ -20,6 +20,3 @@ class PaymentLog(models.Model):
 	
 	class meta:
 		ordering = ["loan_id", "payment_date", "payment_amount", "interest_since_last_payment"]
-
-	def __str__(self):
-		return self.loan_id
